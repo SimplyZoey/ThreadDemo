@@ -13,6 +13,7 @@ package com.rocky.thread;
  * @since 1.0.0
  */
 public class Singleton {
+    //饿汉：上来就new实例；懒汉：用的时候才new，本例是懒汉模式
     public static volatile Singleton singleton = null;
 
     //私有构造函数，保证不能被多次创建

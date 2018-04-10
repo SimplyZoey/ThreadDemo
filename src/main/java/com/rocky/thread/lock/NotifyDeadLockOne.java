@@ -59,12 +59,12 @@ class Producer implements Runnable {
     private void produce() {
         synchronized (cache) {
             try {
-//                while (cache.size() == 1) {
-//                    cache.wait();
-//                }
-                if (cache.size() == 1) {
+                while (cache.size() == 1) {
                     cache.wait();
                 }
+//                if (cache.size() == 1) {
+//                    cache.wait();
+//                }
 
                 // 模拟一秒生产一条消息
                 Thread.sleep(1000);
@@ -96,12 +96,12 @@ class Consumer implements Runnable {
     private void consume() {
         synchronized (cache) {
             try {
-//                while (cache.isEmpty()) {
-//                    cache.wait();
-//                }
-                if (cache.isEmpty()) {
+                while (cache.isEmpty()) {
                     cache.wait();
                 }
+//                if (cache.isEmpty()) {
+//                    cache.wait();
+//                }
 
                 System.out.println("Consumer consumed [" + cache.remove(0) + "]");
                 cache.notify();
