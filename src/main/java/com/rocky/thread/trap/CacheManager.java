@@ -1,4 +1,4 @@
-package com.rocky.thread;
+package com.rocky.thread.trap;
 
 import java.util.HashMap;
 import java.util.Map;
