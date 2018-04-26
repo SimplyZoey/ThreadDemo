@@ -56,7 +56,7 @@ public class SyncMethod {
 
     public static void main(String[] args) throws Exception {
         //同时访问静态同步方法
-//        callStaticSync();
+        callStaticSync();
         //同时访问同步方法
 //        callSync();
         //同时访问锁类的同步代码块
@@ -64,7 +64,7 @@ public class SyncMethod {
         //同时访问锁对象的同步代码块
 //        callSyncObjBlock();
         //分别调用对象锁和类锁的两个同步方法
-        callObjAndClassLock();
+//        callObjAndClassLock();
     }
 
     private static void callObjAndClassLock(){

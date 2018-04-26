@@ -73,9 +73,9 @@ public class InterruptTest {
     public static void main(String[] args) {
         try {
             //通过interrupt来中断处于阻塞状态的线程
-//            interruptBlockThread();
+            interruptBlockThread();
 //            interruptThread();
-            interruptThreadWithFlag();
+//            interruptThreadWithFlag();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -93,7 +93,7 @@ class TrheadD extends Thread {
         try {
             int i = 0;
             while (!isInterrupted()) {
-                Thread.sleep(100); // 休眠100ms
+                Thread.sleep(100); // 休眠100ms,注释该sleep，就变为通过中断标识位来中断线程
                 i++;
                 System.out.println(Thread.currentThread().getName() + " (" + this.getState() + ") loop " + i);
             }
