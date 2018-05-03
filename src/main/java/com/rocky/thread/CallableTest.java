@@ -26,5 +26,6 @@ public class CallableTest implements Callable<Map<String, String>> {
         System.out.println("is cancelled:" + future.isCancelled());
         Map<String,String> result = future.get();//会一直阻塞，直到线程运行结束
         System.out.println(result.get("key"));
+        pool.shutdown();
     }
 }
